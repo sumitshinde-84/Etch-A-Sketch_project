@@ -14,7 +14,7 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     background-color:#FFD59E;
-   height: 50%;
+   height: 100%;
   
    
 }
@@ -44,8 +44,8 @@ box-shadow: inset 0 0 10px #615338;
 }
 
 .page{
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     background-color: white;
     display: flex;
     flex-direction: column;
