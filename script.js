@@ -193,7 +193,7 @@ function makeGrid(input) {
             ElementRow = colSelect.querySelector(`.row${j}`);
            
             ElementRow.addEventListener('mouseover',(e)=>{e.target.style='border:1px yellow solid;height:auto;width:1rem;background:red; flex:1 1 auto;'})
-            ElementRow.addEventListener('mouseleave',(e)=>{e.target.style='border:1px white solid;height:auto;width:1rem;background:white; flex:1 1 auto;transition:5s'})
+            ElementRow.addEventListener('mouseleave',(e)=>{e.target.style='border:1px lightgreen solid;height:auto;width:1rem;background:white; flex:1 1 auto;transition:5s'})
             
 
             
