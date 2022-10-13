@@ -18,41 +18,12 @@ body{
   
    
 }
-
+/* input button section */
 .muterial-con{
 
     flex: 1 1 auto;
 }
 
-.main-con{
-
-    flex: 1 1 auto;
-    margin-top: 30px;
-
-}
-
-.main{
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #F9FFA4;
-border-radius: 10px;
-box-shadow: inset 0 0 10px #615338;
-
-
-
-}
-
-.page{
-    height: 500px;
-    width: 500px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    border: 1px red solid;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
 
 .input-container{
     
@@ -125,11 +96,50 @@ color: #FFA1A1;
     
     }
 
+
+/* sketch pad section */
+
+.main-con{
+
+    flex: 1 1 auto;
+    margin-top: 30px;
+
+}
+
+.main{
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #F9FFA4;
+border-radius: 10px;
+box-shadow: inset 0 0 10px #615338;
+
+
+
+}
+
+.page{
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px red solid;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+
+
 .title{
 
     color: #FFA1A1;
 }
 
+
+/* night & light mode section */
 
 .mode{
     flex: 1 1 auto;

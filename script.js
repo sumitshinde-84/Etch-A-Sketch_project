@@ -6,45 +6,44 @@ let arr=[1,2,3,4,5,6];
 let col;
 let row;
 let column;
+
 const main = document.querySelector('.main');
-const page = document.createElement('div')
+const page = document.createElement('div');
+const pageSelect = document.querySelector('.page');
+
+let light = document.querySelector('#light');
+let night =document.querySelector('#night');
+
+let eight= document.querySelector(`.eight`);
+let Sixteen = document.querySelector(`.six-t`);
+let twentyFour = document.querySelector(`.twenty-f`);
+let thirtyTwo=document.querySelector(`.thirty-t`);
+let forty = document.querySelector(`.forty`);
+let fortyEight = document.querySelector(`.forty-e`);
+
 page.className = 'page';
 main.appendChild(page);
-let light = document.querySelector('#light')
-let night =document.querySelector('#night')
+
 night.addEventListener('click',nightMode)
 light.addEventListener('click',lightMode)
 
-
-let eight= document.querySelector(`.eight`)
 eight.addEventListener('click',rmGrid);
 eight.addEventListener('click',forEight);
 
-let Sixteen = document.querySelector(`.six-t`)
 Sixteen.addEventListener('click',rmGrid);
 Sixteen.addEventListener('click',forSixteen);
 
-
-let twentyFour = document.querySelector(`.twenty-f`)
 twentyFour.addEventListener('click',rmGrid);
 twentyFour.addEventListener('click',forTwenty_four);
 
-
-let thirtyTwo=document.querySelector(`.thirty-t`)
 thirtyTwo.addEventListener('click',rmGrid);
 thirtyTwo.addEventListener('click',forThirty_two);
 
-let forty = document.querySelector(`.forty`)
 forty.addEventListener('click',rmGrid);
 forty.addEventListener('click',forForty);
 
-
-let fortyEight = document.querySelector(`.forty-e`)
 fortyEight.addEventListener('click',rmGrid);
 fortyEight.addEventListener('click',forForty_eight);
-
-
-
 
 
 
@@ -65,20 +64,22 @@ addGrid(input);
 
 function forTwenty_four(){
 
-    input=24;
+  input=24;
 addGrid(input);
+
 }
 
 
 function forThirty_two(){
 
-
     input=32;
 addGrid(input);
+
 }
 
 
 function forForty(){
+
     input=40;
     addGrid(input);
 
@@ -86,27 +87,12 @@ function forForty(){
 
 
 function forForty_eight(){
+
     input=48;
     addGrid(input);
-
 }
 
-
-
-
-
-// default
-
-// let btn = document.getElementById('btn');
-
-// btn.addEventListener('click',rmGrid);
-// btn.addEventListener('click',addGrid);
-
-
-
-
-makeGrid(16);
-
+makeGrid(16); //default grid
 
 function rmGrid(){
     
@@ -125,10 +111,7 @@ for(j=0;j<50;j++)
    }
    
 } 
-
-   
-
-
+ 
 function addGrid(input){
 
     makeGrid(input);
@@ -139,28 +122,18 @@ function addGrid(input){
 
 // column
 
-const pageSelect = document.querySelector('.page');
+
 
 function makeGrid(input) {
-
-
-
-
-   
 
     for (i = 0; i < input; i++) {
         col = document.createElement('div');
         col.className = `col${i} colAll`;
 
         page.appendChild(col);
-
-
     }
 
-
     // this section will apply css on row elements
-
-
 
     const colAll = document.querySelectorAll('.colAll')
 
@@ -171,57 +144,47 @@ function makeGrid(input) {
     }
 
 
-
-
-
     // row
     let colSelect;
-
-
     for (i = 0; i < input; i++) {
         colSelect = document.querySelector(`.col${i}`);
         for (j = 0; j < input; j++) {
 
             row = document.createElement('div');
            
-           
             row.className = `row${j} rowAll`;
-            
             
             colSelect.appendChild(row);
          
             ElementRow = colSelect.querySelector(`.row${j}`);
            
             ElementRow.addEventListener('mouseover',(e)=>{e.target.style='border:1px yellow solid;height:auto;width:1rem;background:red; flex:1 1 auto;'})
-            ElementRow.addEventListener('mouseleave',(e)=>{e.target.style='border:1px lightgreen solid;height:auto;width:1rem;background:white; flex:1 1 auto;transition:5s'})
-            
-
-            
            
+            
         }
 
     }
+
+    let btn = document.querySelector('#btn-clr');
+    let rowAlll = document.querySelectorAll('.rowAll');
     
 
-    let rowAlll =document.querySelectorAll('.rowAll');
-    let btn = document.querySelector('#btn-clr');
-    
-    
     function clearclr(){
+
         for(i=0;i<rowAlll.length;i++){
-        rowAlll[i].style.background='white';
     
+            rowAlll[i].style.background='white';
+
     }
     
-    
     }
-    btn.addEventListener('click',clearclr)
    
+    // 
+    btn.addEventListener('click',clearclr)
+
     // this section will apply css on column element
 
-
     const rowAll = document.querySelectorAll('.rowAll');
-
 
     for (i = 0; i < rowAll.length; i++) {
 
@@ -230,15 +193,11 @@ function makeGrid(input) {
 
     }
 
-    
-
 }
 
 
+// nightmode  function
 
-
-
-// nightmode 
 let element = document.querySelectorAll('.rowAll');
 function nightMode () {
 let main=document.querySelector('.main');
@@ -260,11 +219,14 @@ main.style.background='#000000';
 
         element[i].style = 'border:1px #FB2576 solid;height:auto;width:1rem;background:#150050; flex:1 1 auto;';
         
-        night.style="display:none"
-        light.style="display:absolute"
+        night.style="display:none";
+        light.style="display:absolute";
     }
 
 }
+
+
+// light mode function
 
 function lightMode () {
     let main=document.querySelector('.main');
@@ -291,3 +253,5 @@ function lightMode () {
         }
     
     }
+
+
