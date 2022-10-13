@@ -8,13 +8,13 @@
 }
 
 body{
-
+    box-sizing: border-box;
     text-align: center;
     
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     background-color:#FFD59E;
-    height: 100%;
+    height:100vh;
   
    
 }
