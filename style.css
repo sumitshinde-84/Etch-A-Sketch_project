@@ -10,10 +10,11 @@
 body{
 
     text-align: center;
-    height: 100vh;
-    width: 100%;
+    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
+    background-color:#FFD59E;
+  
    
 }
 
@@ -34,8 +35,9 @@ display: flex;
 
 justify-content: center;
 align-items: center;
-background-color: white;
-
+background-color: #F9FFA4;
+border-radius: 10px;
+box-shadow: inset 0 0 10px #615338;
 
 
 
@@ -47,8 +49,9 @@ background-color: white;
     background-color: white;
     display: flex;
     flex-direction: column;
-    border: 5px red solid;
+    border: 1px red solid;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .input-container{
@@ -74,10 +77,10 @@ background-color: white;
 
     width: 50px;
     height: 50px;
-    border: 2px black solid;
+    color: #edf672;
     margin: 5px;
     text-align: center;
-    background-color: aqua;
+    background-color: #FFA1A1;
     transition: 1s;
 }
 
@@ -88,35 +91,57 @@ background-color: white;
     border: 2px black solid;
     margin: 5px;
     text-align: center;
-    background-color: rgb(3, 193, 193);
+    background-color: #f35a5ac4;
 }
 
 
 
 #btn-clr{
 
-background-color: red;
+background-color:#B4FF9F;
 width: 50px;
 height: 50px;
 border-radius: 50%;
 font-size: 40px;
 text-align: center;
 align-items: center;
-border: 3px black solid;
+border: 3px #edf672 solid;
 margin-left: 70px;
 transition: 1s;
+color: #FFA1A1;
 }
 
 #btn-clr:hover{
 
-    background-color: rgb(186, 2, 2);
+    background-color:#edf672;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     font-size: 40px;
     text-align: center;
     align-items: center;
-    border: 3px black solid;
-    color: aliceblue;
+    border: 3px #FFA1A1 solid;
+    color: #fe6b6b;
     
     }
+
+.title{
+
+    color: #FFA1A1;
+}
+
+
+.mode{
+    flex: 1 1 auto;
+    color: #fe6b6b;
+    margin-top: 200px;
+    font-size: 20px;
+}
+
+.mode img{
+    
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    
+}

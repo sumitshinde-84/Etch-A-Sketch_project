@@ -10,8 +10,10 @@ const main = document.querySelector('.main');
 const page = document.createElement('div')
 page.className = 'page';
 main.appendChild(page);
-
-
+let light = document.querySelector('#light')
+let night =document.querySelector('#night')
+night.addEventListener('click',nightMode)
+light.addEventListener('click',lightMode)
 
 
 let eight= document.querySelector(`.eight`)
@@ -190,9 +192,9 @@ function makeGrid(input) {
          
             ElementRow = colSelect.querySelector(`.row${j}`);
            
-            ElementRow.addEventListener('mouseover',(e)=>{e.target.style.background='red'})
-          
-            ElementRow.addEventListener('mouseleave',(e)=>{e.target.style='background:gray ;transition:1s'})
+            ElementRow.addEventListener('mouseover',(e)=>{e.target.style='border:1px yellow solid;height:auto;width:1rem;background:red; flex:1 1 auto;'})
+            ElementRow.addEventListener('mouseleave',(e)=>{e.target.style='border:1px white solid;height:auto;width:1rem;background:white; flex:1 1 auto;transition:5s'})
+            
 
             
            
@@ -223,7 +225,7 @@ function makeGrid(input) {
 
     for (i = 0; i < rowAll.length; i++) {
 
-        rowAll[i].style = 'border:1px white solid;height:auto;width:1rem;background:gray; flex:1 1 auto;';
+        rowAll[i].style = 'border:1px lightgreen solid;height:auto;width:1rem;background:white; flex:1 1 auto;';
         
 
     }
@@ -236,3 +238,56 @@ function makeGrid(input) {
 
 
 
+// nightmode 
+let element = document.querySelectorAll('.rowAll');
+function nightMode () {
+let main=document.querySelector('.main');
+let body=document.querySelector('body')
+let btn = document.querySelectorAll('.btn');
+let clrBtn = document.querySelector('#btn-clr')
+for(j=0;j<btn.length;j++){
+
+    btn[j].style.background='#FB2576'
+    btn[j].style.color='#3F0071'
+}
+clrBtn.style.background='#FB2576'
+clrBtn.style.color='#3F0071'
+clrBtn.style.border='#3F0071'
+body.style.background='#3F0071'
+main.style.background='#000000';
+
+    for (i = 0; i < element.length; i++) {
+
+        element[i].style = 'border:1px #FB2576 solid;height:auto;width:1rem;background:#150050; flex:1 1 auto;';
+        
+        night.style="display:none"
+        light.style="display:absolute"
+    }
+
+}
+
+function lightMode () {
+    let main=document.querySelector('.main');
+    let body=document.querySelector('body')
+    let btn = document.querySelectorAll('.btn');
+    let clrBtn = document.querySelector('#btn-clr')
+    for(j=0;j<btn.length;j++){
+    
+        btn[j].style.background='#FFA1A1'
+        btn[j].style.color='#edf672'
+    }
+    clrBtn.style.background='#B4FF9F'
+    clrBtn.style.color='#FFA1A1'
+    clrBtn.style.border='3px #FFA1A1 solid';
+    body.style.background='#FFD59E'
+    main.style.background='#F9FFA4';
+    
+        for (i = 0; i < element.length; i++) {
+    
+            element[i].style = 'border:1px lightgreen solid;height:auto;width:1rem;background:white; flex:1 1 auto';
+            
+           light.style="display:none"
+           night.style="display:absolute"
+        }
+    
+    }
