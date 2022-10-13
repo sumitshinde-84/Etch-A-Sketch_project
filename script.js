@@ -209,7 +209,7 @@ function makeGrid(input) {
     
     function clearclr(){
         for(i=0;i<rowAlll.length;i++){
-        rowAlll[i].style.background='gray';
+        rowAlll[i].style.background='white';
     
     }
     
