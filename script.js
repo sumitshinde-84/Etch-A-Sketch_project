@@ -10,7 +10,9 @@ let column;
 const main = document.querySelector('.main');
 const page = document.createElement('div');
 const pageSelect = document.querySelector('.page');
-
+let audio = new Audio('audio/DICE.WAV');
+let audioBell =new Audio('audio/bell.wav');
+let audioPen =new Audio('audio/pen.wav');
 let light = document.querySelector('#light');
 let night =document.querySelector('#night');
 
@@ -48,7 +50,10 @@ fortyEight.addEventListener('click',forForty_eight);
 
 
 function forEight(){
-    
+
+
+audio.play();    
+
 input=8;
 addGrid(input);
 
@@ -56,14 +61,14 @@ addGrid(input);
 
 
 function forSixteen(){
-
+    audio.play(); 
     input=16;
 addGrid(input);
 }
 
 
 function forTwenty_four(){
-
+    audio.play(); 
   input=24;
 addGrid(input);
 
@@ -71,7 +76,7 @@ addGrid(input);
 
 
 function forThirty_two(){
-
+    audio.play(); 
     input=32;
 addGrid(input);
 
@@ -79,7 +84,7 @@ addGrid(input);
 
 
 function forForty(){
-
+    audio.play(); 
     input=40;
     addGrid(input);
 
@@ -87,7 +92,7 @@ function forForty(){
 
 
 function forForty_eight(){
-
+    audio.play(); 
     input=48;
     addGrid(input);
 }
@@ -126,6 +131,10 @@ function addGrid(input){
 
 function makeGrid(input) {
 
+let color = ['red','green','yellow','orange','blue','pink']
+let randNo;
+
+
     for (i = 0; i < input; i++) {
         col = document.createElement('div');
         col.className = `col${i} colAll`;
@@ -158,9 +167,26 @@ function makeGrid(input) {
          
             ElementRow = colSelect.querySelector(`.row${j}`);
            
-            ElementRow.addEventListener('mouseover',(e)=>{e.target.style='border:1px yellow solid;height:auto;width:1rem;background:red; flex:1 1 auto;'})
-           
-            
+            ElementRow.addEventListener('mouseover',(e)=>{
+                
+                for(m=0;m<7;m++){
+                    randNo = Math.floor(Math.random()*(5-0)+0);
+                for(n=0;n<=7;n++){
+                    temp=randNo;
+                    if(randNo==temp){
+                        
+                        continue;
+                    }
+                        
+                    
+                   
+                 audioPen.play()
+                
+                
+                
+                
+                }}
+                e.target.style=`border:1px yellow solid;height:auto;width:1rem;background-color:${color[randNo]}; flex:1 1 auto;`})
         }
 
     }
@@ -200,6 +226,7 @@ function makeGrid(input) {
 
 let element = document.querySelectorAll('.rowAll');
 function nightMode () {
+audioBell.play();
 let main=document.querySelector('.main');
 let body=document.querySelector('body')
 let btn = document.querySelectorAll('.btn');
@@ -229,6 +256,7 @@ main.style.background='#000000';
 // light mode function
 
 function lightMode () {
+    audioBell.play();
     let main=document.querySelector('.main');
     let body=document.querySelector('body')
     let btn = document.querySelectorAll('.btn');
