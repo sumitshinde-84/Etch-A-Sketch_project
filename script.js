@@ -129,10 +129,17 @@ function addGrid(input){
 
 
 
-function makeGrid(input) {
+function makeGrid(input){
 
-let color = ['red','green','yellow','orange','blue','pink']
+let color =  ["hsl(0, 100%, 50%)", "hsl(240, 100%, 50%)", "hsl(147, 50%, 50%)", "hsl(300, 76%, 50%)", "hsl(39, 100%, 50%)", "hsl(248, 53%, 50%)"];
+let color1 =  ["hsl(0, 100%, 40%)", "hsl(240, 100%, 40%)", "hsl(147, 50%, 40%)", "hsl(300, 76%, 40%)", "hsl(39, 100%, 40%)", "hsl(248, 53%, 40%)"];
+let color2 =  ["hsl(0, 100%, 30%)", "hsl(240, 100%, 30%)", "hsl(147, 50%, 30%)", "hsl(300, 76%, 30%)", "hsl(39, 100%, 30%)", "hsl(248, 53%, 30%)"];
+let color3 =  ["hsl(0, 100%, 20%)", "hsl(240, 100%, 20%)", "hsl(147, 50%, 20%)", "hsl(300, 76%, 20%)", "hsl(39, 100%, 20%)", "hsl(248, 53%, 20%)"];
+let color4 =  ["hsl(0, 100%, 10%)", "hsl(240, 100%, 10%)", "hsl(147, 50%, 10%)", "hsl(300, 76%, 10%)", "hsl(39, 100%, 10%)", "hsl(248, 53%, 10%)"];		
+let color5 =  ["hsl(0, 100%, 0%)", "hsl(240, 100%, 0%)", "hsl(147, 50%, 0%)", "hsl(300, 76%, 0%)", "hsl(39, 100%, 0%)", "hsl(248, 53%, 0%)"];	
 let randNo;
+let count=0;
+
 
 
     for (i = 0; i < input; i++) {
@@ -155,6 +162,7 @@ let randNo;
 
     // row
     let colSelect;
+    
     for (i = 0; i < input; i++) {
         colSelect = document.querySelector(`.col${i}`);
         for (j = 0; j < input; j++) {
@@ -168,26 +176,45 @@ let randNo;
             ElementRow = colSelect.querySelector(`.row${j}`);
            
             ElementRow.addEventListener('mouseover',(e)=>{
-                
+
                 for(m=0;m<7;m++){
-                    randNo = Math.floor(Math.random()*(5-0)+0);
+                    randNo = Math.floor(Math.random()*(5-0)+0); 
                 for(n=0;n<=7;n++){
-                    temp=randNo;
-                    if(randNo==temp){
-                        
-                        continue;
-                    }
-                        
+                   
+                  
+                   
                     
                    
                  audioPen.play()
-                
-                
-                
-                
+            
                 }}
-                e.target.style=`border:1px yellow solid;height:auto;width:1rem;background-color:${color[randNo]}; flex:1 1 auto;`})
-        }
+               let temp=randNo
+
+                e.target.style=`border:1px yellow solid;height:auto;width:1rem;background-color:${color[temp]}; flex:1 1 auto;`
+                e.target.addEventListener('mouseover',(e)=>{
+
+                    e.target.style=`border:1px yellow solid;height:auto;width:1rem;background-color:${color1[temp]};flex:1 1 auto;`
+                    e.target.addEventListener('mouseover',(e)=>{
+                        
+                        e.target.style=`border:1px yellow solid;height:auto;width:1rem;background-color:${color2[temp]};flex:1 1 auto;`
+                        e.target.addEventListener('mouseover',(e)=>{
+                           
+                            e.target.style=`border:1px yellow solid;height:auto;width:1rem;background-color:${color3[temp]};flex:1 1 auto;`
+                            e.target.addEventListener('mouseover',(e)=>{
+                               
+                                e.target.style=`border:1px yellow solid;height:auto;width:1rem;background-color:${color4[temp]};flex:1 1 auto;`
+                                e.target.addEventListener('mouseover',(e)=>{
+                                   
+                                    e.target.style=`border:1px yellow solid;height:auto;width:1rem;background-color:${color5[temp]};flex:1 1 auto;`
+                                })
+                            })
+                        })
+                    })
+                })
+            
+            })
+              
+        }       
 
     }
 
